@@ -11,4 +11,9 @@ public class StringCalculator {
 	   assertEquals(0,Calculator.add(""));
    }
 	
+   @Test
+   public void returnNumberIfNumber() {
+	   assertEquals(1, Calculator.add("1"));
+   }	
+   	
 }
