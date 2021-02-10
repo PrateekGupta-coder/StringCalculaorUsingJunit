@@ -16,4 +16,8 @@ public class StringCalculator {
 	   assertEquals(1, Calculator.add("1"));
    }	
    	
+   @Test
+   public void returnSumOnTwoNumber() {
+	   assertEquals(30, Calculator.add("10,20"));
+   }	
 }
