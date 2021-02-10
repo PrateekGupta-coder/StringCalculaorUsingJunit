@@ -6,16 +6,23 @@ public class Calculator {
 		List<Integer>  list = new ArrayList<Integer>();
 		if(text.isEmpty()) {
 			return 0;
-		}else if(text.contains(",")) {
-			String str[] = text.split(",|\n");
-			for (String sText : str) {
-				list.add(convertTo(sText));
+		}else {
+			String [] str = splitter(text);
+			for (String element : str) {
+				list.add(convertTo(element));	
 			}
 			return sumOfElements(list);
 		}
-		else {
-			list.add(convertTo(text));
-			return sumOfElements(list);
+	}
+	
+	private static String[] splitter(String text) {
+		if(text.contains("//")) {
+		   Matcher m = Pattern.compile("//(.)\n(.*)").matcher(text);
+		   String custom = m.group(1);
+		   String number = m.group(2);
+		   return number.split(custom);
+		}else {
+			return text.split(",|\n");
 		}
 	}
 	
