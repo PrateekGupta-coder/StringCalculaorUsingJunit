@@ -25,4 +25,9 @@ public class StringCalculator {
    public void returnSumOfMultipleNumbers() {
 	   assertEquals(50, Calculator.add("10,20,20"));
    }	
+	
+   @Test
+   public void acceptNewLineAsValidDelimiter() {
+	   assertEquals(10, Calculator.add("2,2\n6"));
+   }	
 }
